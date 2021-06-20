@@ -1,5 +1,1 @@
 runtime: go115 # or another supported version
-
-env_variables:
-  MONGO_URL: "mongodb+srv://admin:pass1234@cluster0.351zm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-  MONGO_DATABASE: "pabeadle"
