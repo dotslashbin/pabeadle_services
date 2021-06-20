@@ -1,3 +1,5 @@
 .vscode
 testrun
 vendor/
+.env
+configs/keys/
