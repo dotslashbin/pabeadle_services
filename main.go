@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"github.com/dotslashbin/pabeadle_services/srvsapp"
+)
 
 func main() {
-	fmt.Println("Initial commit")
+	service := srvsapp.Gin()
+	service.Run()
 }
