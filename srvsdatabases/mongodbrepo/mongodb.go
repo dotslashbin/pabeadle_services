@@ -37,11 +37,9 @@ func GetClient() (*mongo.Client, error) {
 	godotenv.Load()
 	configs, _ := godotenv.Read()
 
-	fmt.Println(configs)
-
 	mongoOnce.Do(func() {
 		// Setting client optons
-		clientOptions := options.Client().ApplyURI("mongodb+srv://admin:pass1234@cluster0.351zm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+		clientOptions := options.Client().ApplyURI(configs["MONGO_URL"])
 
 		client, err := mongo.Connect(context.TODO(), clientOptions)
 		if err != nil {
@@ -65,8 +63,9 @@ func GetClient() (*mongo.Client, error) {
  */
 func (db *MongoDBRepo) Create(inputs interface{}, collectionName string) interface{} {
 
-	// TODO: convert this db name into config
-	collection := db.Client.Database("pabeadle").Collection(collectionName)
+	godotenv.Load()
+	configs, _ := godotenv.Read()
+	collection := db.Client.Database(configs["MONGO_DATABASE"]).Collection(collectionName)
 
 	result, err := collection.InsertOne(context.TODO(), inputs)
 	if err != nil {
