@@ -1,7 +1,7 @@
 package attendancetasks
 
 import (
-	"github.com/dotslashbin/pabeadle_services/srvsdatabases/mongodbrepo"
+	"github.com/dotslashbin/pabeadle_core/databases/mongodbrepo"
 	"github.com/gin-gonic/gin"
 )
 

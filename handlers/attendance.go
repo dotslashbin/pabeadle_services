@@ -1,4 +1,4 @@
-package srvchandlers
+package handlers
 
 import (
 	"net/http"

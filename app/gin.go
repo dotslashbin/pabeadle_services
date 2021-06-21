@@ -1,8 +1,8 @@
-package srvsapp
+package app
 
 import (
 	"github.com/dotslashbin/pabeadle_core/configs"
-	"github.com/dotslashbin/pabeadle_services/srvsdatabases/mongodbrepo"
+	"github.com/dotslashbin/pabeadle_core/databases/mongodbrepo"
 	"github.com/dotslashbin/pabeadle_services/srvsmiddlewares"
 	"github.com/gin-gonic/gin"
 )
