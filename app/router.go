@@ -10,4 +10,5 @@ import (
  */
 func InitializeRoutes(gin *gin.Engine) {
 	gin.POST("/attendance", handlers.CreateStudentLog)
+	gin.GET("/attendance", handlers.GetAttendance)
 }
