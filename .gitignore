@@ -3,3 +3,4 @@ testrun
 vendor/
 .env
 configs/keys/
+secrets/
