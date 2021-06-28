@@ -1,4 +1,4 @@
-package srvchandlers
+package handlers
 
 import (
 	"net/http"
@@ -22,6 +22,22 @@ func CreateStudentLog(context *gin.Context) {
 	task := attendancetasks.AttendanceWriter{}
 	task.GinContext = *context
 	result := task.CreateAttendance(attendance)
+
+	context.JSON(http.StatusOK, gin.H{
+		"data": result,
+	})
+}
+
+type filter struct {
+	page  int16
+	limit int16
+}
+
+func GetAttendance(context *gin.Context) {
+	task := attendancetasks.AttendanceReader{}
+	task.GinContext = *context
+	x := filter{page: 0, limit: 0}
+	result := task.GetAttendance(x)
 
 	context.JSON(http.StatusOK, gin.H{
 		"data": result,
